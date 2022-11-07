@@ -1,0 +1,33 @@
+﻿@page "/monate"
+<h3>MonatsListe</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-12">
+            @Monat
+        </div>
+        <div class="col-md-8 col-12">
+            <ul class="list-group">
+                <li class="list-group-item active">Monate</li>
+                @for (var i = 0; i < 12; i++)
+                {
+                    var m = i;
+                    <li class="list-group-item list-group-item-action" @onclick="()=>auswahl(m)">
+                        @DateTime.Now.AddMonths(i).ToString("MMMM")
+
+                    </li>
+
+                }
+            </ul>
+
+
+        </div>
+    </div>
+
+</div>
+@code {
+    string Monat;
+    void auswahl(int m)
+    {
+         Monat=DateTime.Now.AddMonths(m).ToString("MMMM");
+    }
+                }
