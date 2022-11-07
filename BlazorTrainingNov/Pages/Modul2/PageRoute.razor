@@ -1,0 +1,15 @@
+﻿@page "/rechnung"
+@page "/rechnung/{id:int}"
+@page "/rechnung/{id:int}/edit"
+
+<h3>PageRoute</h3>
+@id
+@Count
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public int Count { get; set; }
+}
