@@ -1,0 +1,7 @@
+﻿@page "/simple"
+<h3 style='@(strike?"text-decoration:line-through":"")'>SimpleCode @(i+1)</h3>
+<input class="form-check-input mt-0" type="checkbox" @bind="strike"/>
+@code {
+    int i;
+    bool strike;
+}
