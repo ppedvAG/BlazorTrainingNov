@@ -1,0 +1,24 @@
+﻿<h3>Attribute</h3>
+<input @bind="Wert" @ref="input1" @onkeypress="key1"/>
+<button @onclick="klick">Hallo</button>
+<div @onclick="()=>klick()">div click</div>
+<BlazorTrainingNov.Pages.Modul1.DemoCode @ref="comp1"></BlazorTrainingNov.Pages.Modul1.DemoCode>
+
+@code {
+    string Wert;
+    ElementReference input1;
+    BlazorTrainingNov.Pages.Modul1.DemoCode comp1;
+    void klick()
+    {
+        input1.FocusAsync();
+        comp1.i = 42;
+    }
+    void key1(KeyboardEventArgs args)
+    {
+        if (args.Key=="A")
+        {
+            
+        }
+    }
+
+}
