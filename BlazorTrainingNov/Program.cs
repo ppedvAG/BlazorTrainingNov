@@ -1,4 +1,5 @@
 using BlazorTrainingNov.Data;
+using BlazorTrainingNov.Pages.Modul4;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -14,8 +15,8 @@ namespace BlazorTrainingNov
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
-            
-
+            builder.Services.AddSingleton<ChatVM>();
+            builder.Services.AddHttpClient();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
