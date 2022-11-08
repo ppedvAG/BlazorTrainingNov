@@ -1,0 +1,19 @@
+﻿@page "/uc"
+<h3>UseParameterComponent</h3>
+<CascadingValue Value="42">
+    <CascadingValue Value="blue" Name="Ort">
+        <ParameterComponent IntProperty="42" MyProperty="red"
+                            style="font-family:'Times New Roman', Times, serif" hannes="hannes">
+            @*  <p>lorem ipsum</p>*@
+            <Head>
+                <h1>Hallo Welt</h1>
+            </Head>
+            <Body>
+                <p>lorem ipsun <br />sdfdgff</p>
+            </Body>
+        </ParameterComponent>
+    </CascadingValue>
+</CascadingValue>
+@code {
+    string blue = "blue";
+}

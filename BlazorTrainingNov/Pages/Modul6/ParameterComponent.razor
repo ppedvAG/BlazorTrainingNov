@@ -1,0 +1,30 @@
+﻿<h3 style="color:@MyProperty">ParameterComponent @MyProperty</h3>
+<div @attributes=MyAttributes >
+    Text @Farbe @Antwort
+    @Head
+</div>
+<div>
+    @Body
+</div>
+@code {
+    [Parameter]
+    [EditorRequired]
+    public string MyProperty { get; set; }
+     [Parameter]
+    public int IntProperty { get; set; }
+    [Parameter(CaptureUnmatchedValues =true)]
+    public Dictionary<string,object> MyAttributes { get; set; }
+    [CascadingParameter(Name ="Ort")]
+    public string Farbe { get; set; }
+
+
+    [CascadingParameter]
+    public int Antwort { get; set; }
+    //[Parameter]
+    //public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment Head { get; set; }
+    [Parameter]
+    public RenderFragment Body { get; set; }
+}
