@@ -22,6 +22,8 @@ namespace BlazorTrainingNov
             builder.Services.AddDbContext<NorthwindContext>(o=>o.UseSqlServer(
                 builder.Configuration.GetConnectionString("Northwind")
                  ));
+
+            builder.Services.AddScoped<RazorClassLibrary1.ExampleJsInterop>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -1,0 +1,20 @@
+﻿@page "/js1"
+@using RazorClassLibrary1
+@inject IJSRuntime JsRuntime
+@inject ExampleJsInterop ejs
+
+<h3>JSComponent1</h3>
+
+<button @onclick="lib">Lib</button>
+@ls
+
+
+@code {
+    string ls="";
+
+    async Task lib()
+    {
+
+     ls=await ejs.Prompt("gibs mir");
+    }
+}
