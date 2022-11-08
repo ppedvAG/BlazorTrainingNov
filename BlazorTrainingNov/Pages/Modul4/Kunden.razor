@@ -1,0 +1,33 @@
+﻿@page "/kunden"
+@using Models
+@inject NorthwindContext db
+
+<h3>Kunden</h3>
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" @bind-value="filter" @bind-value:event="oninput">
+    <button class="btn btn-outline-secondary" type="button">save</button>
+</div>
+<ul class="list-group">
+  
+  @*      @foreach (var item in db.Customers.Where(x=>x.CompanyName.Contains(filter)))*@
+         @foreach (var item in Liste.Where(x=>x.CompanyName.Contains(filter)))
+        {
+            <li class="list-group-item">@item.CompanyName</li>
+        }
+  
+</ul>
+
+@code {
+    string filter="";
+    List<Customer> Liste;
+    protected override void OnInitialized()
+    {
+        Liste = db.Customers.ToList();
+    }
+    //protected override Task OnInitializedAsync()
+    //{
+    //    Liste = db.Customers.ToList();
+     
+    //}
+}

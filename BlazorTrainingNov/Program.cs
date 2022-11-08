@@ -1,7 +1,9 @@
 using BlazorTrainingNov.Data;
+using BlazorTrainingNov.Models;
 using BlazorTrainingNov.Pages.Modul4;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorTrainingNov
 {
@@ -17,6 +19,9 @@ namespace BlazorTrainingNov
             builder.Services.AddSingleton<WeatherForecastService>();
             builder.Services.AddSingleton<ChatVM>();
             builder.Services.AddHttpClient();
+            builder.Services.AddDbContext<NorthwindContext>(o=>o.UseSqlServer(
+                builder.Configuration.GetConnectionString("Northwind")
+                 ));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
