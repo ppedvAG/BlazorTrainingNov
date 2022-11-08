@@ -9,6 +9,13 @@
             <ValidationMessage For="()=>_person.Name"></ValidationMessage>
         </div>
     </div>
+        <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <InputTextOninput class="form-control" @bind-Value="_person.Name"></InputTextOninput>
+            <ValidationMessage For="()=>_person.Name"></ValidationMessage>
+        </div>
+    </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Gross</label>
         <div class="col-sm-10">
